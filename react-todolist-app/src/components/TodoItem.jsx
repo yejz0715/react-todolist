@@ -17,7 +17,11 @@ const TodoItem = ({
   };
 
   const handleDeleteTodo = () => {
-    setList(list.filter((todo) => todo.id !== id));
+    if (readOnly) {
+      setList(list.filter((todo) => todo.id !== id));
+    } else {
+      setReadOnly((prev) => !prev);
+    }
   };
   const handleUpdateTodo = () => {
     setReadOnly((prev) => !prev);
