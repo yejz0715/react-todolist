@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import styled from "styled-components";
+import * as S from "../style/itemStyle";
 const TodoItem = ({
   list,
   setList,
@@ -32,26 +32,27 @@ const TodoItem = ({
   };
 
   return (
-    <Container>
-      <input type="checkbox" onChange={handleChecked} checked={check} />
-      id: {id} <br /> regDate : {regDate} <br />
-      text:
-      <input
-        type="text"
-        defaultValue={updateText}
-        readOnly={readOnly}
-        onChange={handleText}
-      ></input>
+    <S.ItemContainer>
+      <S.ItemCheck type="checkbox" onChange={handleChecked} checked={check} />
       <br />
-      category: {category} <br />
-      <button onClick={handleDeleteTodo}>{!readOnly ? "취소" : "삭제"}</button>
-      <button onClick={handleUpdateTodo}>{!readOnly ? "확인" : "수정"}</button>
-    </Container>
+      <S.ItemBox>
+        {regDate} <br />
+        <S.ItemInput
+          type="text"
+          defaultValue={updateText}
+          readOnly={readOnly}
+          onChange={handleText}
+        />
+        <br />
+        category: {category} <br />
+      </S.ItemBox>
+      <S.ItemButton onClick={handleDeleteTodo}>
+        {!readOnly ? "취소" : "삭제"}
+      </S.ItemButton>
+      <S.ItemButton onClick={handleUpdateTodo}>
+        {!readOnly ? "확인" : "수정"}
+      </S.ItemButton>
+    </S.ItemContainer>
   );
 };
 export default TodoItem;
-
-const Container = styled.div`
-  background-color: pink;
-  margin-bottom: 12px;
-`;
