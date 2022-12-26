@@ -2,14 +2,12 @@ import styled from "styled-components";
 export const InputBox = styled.div`
   display: flex;
   justify-content: center;
-  padding: 1.5rem 0;
-  //margin-bottom: 20px;
+  padding: 1.5rem;
 `;
 export const Input = styled.input`
-  width: 20rem;
+  width: 100%;
   padding: 0.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid #dee2e6;
+  border-bottom: 2px solid gray;
   font-size: 1rem;
 `;
 

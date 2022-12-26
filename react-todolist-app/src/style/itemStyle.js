@@ -1,29 +1,30 @@
 import styled from "styled-components";
 export const ItemContainer = styled.div`
   display: flex;
-  padding: 10px 15px;
+  padding: 1rem;
   background-color: pink;
-  margin-bottom: 15px;
-  line-height: 17px;
-  font-size: 20px;
+  margin-bottom: 1rem;
+  line-height: 0.6rem;
 `;
 export const ItemCheck = styled.input``;
 export const ItemBox = styled.div`
   display: flex;
   flex-direction: column;
+  width: 40rem;
+  margin: 0 2rem;
 `;
 export const ItemInput = styled.input`
-  outline: none;
-  border: none;
-  border-bottom: 2px solid gray;
-  background-color: transparent;
+  border-bottom: 1px dashed gray;
+`;
+export const ItemButtonBox = styled.div`
+  display: flex;
+  width: 20rem;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 export const ItemButton = styled.button`
-  margin-left: 13px;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 2rem;
 `;

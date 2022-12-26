@@ -69,8 +69,12 @@ a{
     -ms-user-select: auto;
     user-select: auto;
   }
-  input:focus {
+  
+  input{
     outline: none;
+    border:none;
+   
+    background-color: transparent;
   }
 
 
@@ -89,5 +93,6 @@ a{
 	  // -moz-appearance: none;
 	  // appearance: none;체크박스
   }
+  
 
 `;

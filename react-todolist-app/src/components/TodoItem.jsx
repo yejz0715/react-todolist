@@ -46,12 +46,14 @@ const TodoItem = ({
         <br />
         category: {category} <br />
       </S.ItemBox>
-      <S.ItemButton onClick={handleDeleteTodo}>
-        {!readOnly ? "취소" : "삭제"}
-      </S.ItemButton>
-      <S.ItemButton onClick={handleUpdateTodo}>
-        {!readOnly ? "확인" : "수정"}
-      </S.ItemButton>
+      <S.ItemButtonBox>
+        <S.ItemButton onClick={handleUpdateTodo}>
+          {!readOnly ? "확인" : "수정"}
+        </S.ItemButton>
+        <S.ItemButton onClick={handleDeleteTodo}>
+          {!readOnly ? "취소" : "삭제"}
+        </S.ItemButton>
+      </S.ItemButtonBox>
     </S.ItemContainer>
   );
 };
