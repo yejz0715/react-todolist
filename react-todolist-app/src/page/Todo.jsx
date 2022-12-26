@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import * as S from "./todoStyle";
 import TodoInput from "../components/TodoInput";
 import TodoTemplate from "../components/TodoTemplate";
 import TodoList from "../components/TodoList";
 import { todos } from "../data/dummy";
+import img from "../data/image/calender.png";
 
 const Todo = () => {
   // 새로 만든 투두의 정보를 담을 객체
@@ -22,10 +24,13 @@ const Todo = () => {
     setList([...list, createdTodo]);
   };
   return (
-    <TodoTemplate>
-      <TodoInput setCreatedTodo={setCreatedTodo} />
-      <TodoList setList={setList} list={list} />
-    </TodoTemplate>
+    <S.TodoContainer>
+      <S.Calender src={img} alt="calender" />
+      <TodoTemplate>
+        <TodoInput setCreatedTodo={setCreatedTodo} />
+        <TodoList setList={setList} list={list} />
+      </TodoTemplate>
+    </S.TodoContainer>
   );
 };
 export default Todo;
