@@ -1,8 +1,9 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import * as S from "../style/listStyle";
 const TodoList = ({ setList, list }) => {
   return (
-    <div>
+    <S.ListBox>
       {list &&
         list.map((item) => (
           <TodoItem
@@ -16,7 +17,7 @@ const TodoList = ({ setList, list }) => {
             setList={setList}
           />
         ))}
-    </div>
+    </S.ListBox>
   );
 };
 export default TodoList;
