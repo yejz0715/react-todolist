@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
+import * as S from "../style/inputStyle";
 
 const TodoInput = ({ setCreatedTodo }) => {
   // useRef를 사용해서 nextId값을 설정
@@ -22,14 +23,15 @@ const TodoInput = ({ setCreatedTodo }) => {
   };
 
   return (
-    <div>
-      <input
+    <S.InputBox>
+      <S.Input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        placeholder="할일을 입력해주세요!"
       />
-      <button onClick={handleCreateTodo}>추가</button>
-    </div>
+      <S.InputButton onClick={handleCreateTodo}>추가</S.InputButton>
+    </S.InputBox>
   );
 };
 export default TodoInput;
