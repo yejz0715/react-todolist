@@ -5,6 +5,7 @@ import TodoTemplate from "../components/TodoTemplate";
 import TodoList from "../components/TodoList";
 import { todos } from "../data/dummy";
 import img from "../data/image/calender.png";
+import TodoHeader from "../components/TodoHeader";
 
 const Todo = () => {
   // 새로 만든 투두의 정보를 담을 객체
@@ -27,6 +28,7 @@ const Todo = () => {
     <S.TodoContainer>
       <S.Calender src={img} alt="calender" />
       <TodoTemplate>
+        <TodoHeader />
         <TodoInput setCreatedTodo={setCreatedTodo} />
         <TodoList setList={setList} list={list} />
       </TodoTemplate>
