@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MdOutlineAddBox } from "react-icons/md";
 export const InputBox = styled.div`
   display: flex;
   justify-content: center;
@@ -11,14 +12,9 @@ export const Input = styled.input`
   font-size: 1rem;
 `;
 
-export const InputButton = styled.button`
-  //  background-color: #38d9a9;
-  cursor: pointer;
-  width: 50px;
-  align-items: center;
-  border-radius: 50%;
-  background-color: pink;
-  outline: none;
-  border: none;
+export const InputButton = styled(MdOutlineAddBox)`
+  width: 2rem;
+  height: 2rem;
   margin-left: 6px;
+  cursor: pointer;
 `;
