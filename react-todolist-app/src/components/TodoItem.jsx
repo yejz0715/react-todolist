@@ -1,4 +1,10 @@
 import { React, useState } from "react";
+
+import {
+  RiDeleteBin2Fill, //삭제
+  RiDraftFill, //수정
+} from "react-icons/ri";
+
 import * as S from "../style/itemStyle";
 const TodoItem = ({
   list,
@@ -33,7 +39,9 @@ const TodoItem = ({
 
   return (
     <S.ItemContainer>
-      <S.ItemCheck type="checkbox" onChange={handleChecked} checked={check} />
+      <div onClick={handleChecked}>
+        {check ? <S.Checked /> : <S.UnChecked />}
+      </div>
       <br />
       <S.ItemBox>
         {regDate} <br />
@@ -47,12 +55,12 @@ const TodoItem = ({
         category: {category} <br />
       </S.ItemBox>
       <S.ItemButtonBox>
-        <S.ItemButton onClick={handleUpdateTodo}>
-          {!readOnly ? "확인" : "수정"}
-        </S.ItemButton>
-        <S.ItemButton onClick={handleDeleteTodo}>
-          {!readOnly ? "취소" : "삭제"}
-        </S.ItemButton>
+        <div onClick={handleUpdateTodo}>
+          {!readOnly ? <S.IconBox>저장</S.IconBox> : <S.Update />}
+        </div>
+        <div onClick={handleDeleteTodo}>
+          {!readOnly ? <S.IconBox>취소</S.IconBox> : <S.Delete />}
+        </div>
       </S.ItemButtonBox>
     </S.ItemContainer>
   );
