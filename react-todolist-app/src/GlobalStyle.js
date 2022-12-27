@@ -79,9 +79,9 @@ a{
 
 
   button {
-    /* outline: none;
+     outline: none;
     border: none;
-    background: none;
+   /* background: none;
     padding: 0; */
     cursor: pointer;
   }
