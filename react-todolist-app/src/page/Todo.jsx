@@ -26,9 +26,12 @@ const Todo = () => {
   };
   return (
     <S.TodoContainer>
-      <S.Calender src={img} alt="calender" />
+      <S.TodoBlock>
+        <S.Calender src={img} alt="calender" />
+      </S.TodoBlock>
       <TodoTemplate>
         <TodoHeader />
+
         <TodoInput setCreatedTodo={setCreatedTodo} />
         <TodoList setList={setList} list={list} />
       </TodoTemplate>
