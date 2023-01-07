@@ -68,12 +68,14 @@ a{
     -webkit-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
+    outline: none;
+    border:none;
+    background-color: transparent;
   }
   
   input{
     outline: none;
     border:none;
-   
     background-color: transparent;
   }
 
