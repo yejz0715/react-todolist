@@ -23,7 +23,7 @@ const TodoList = ({ setList, list }) => {
   );
 };
 TodoList.PropsTypes = {
-  setList: PropsTypes.array,
-  list: PropsTypes.array,
+  setList: PropsTypes.func,
+  list: PropsTypes.object,
 };
 export default TodoList;
