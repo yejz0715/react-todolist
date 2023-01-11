@@ -49,7 +49,7 @@ const TodoInput = ({ setCreatedTodo }) => {
 };
 
 TodoInput.PropsTypes = {
-  setCreatedTodo: PropsTypes.object,
+  setCreatedTodo: PropsTypes.func,
 };
 
 export default TodoInput;
