@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import * as S from "./inputStyle";
+import PropsTypes from "prop-types";
 
 const TodoInput = ({ setCreatedTodo }) => {
   // useRef를 사용해서 nextId값을 설정
@@ -46,4 +47,9 @@ const TodoInput = ({ setCreatedTodo }) => {
     </S.InputBox>
   );
 };
+
+TodoInput.PropsTypes = {
+  setCreatedTodo: PropsTypes.object,
+};
+
 export default TodoInput;
