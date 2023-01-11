@@ -1,24 +1,23 @@
 import styled from "styled-components";
 export const TodoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 3rem;
-`;
-export const TodoBlock = styled.div`
-  width: 35rem;
-  height: 52rem;
-  border-radius: 0.5rem;
-  background-color: #fffff0;
-  margin-right: 1rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #fffff0;
 `;
 
-// export const Calender = styled.img`
-//   width: 33rem;
-//   height: 44rem;
+export const TodoBlock = styled.div`
+  height: 52rem;
+  padding: 1.5rem;
+`;
+export const HeaderTitle = styled.p`
+  font-size: 8rem;
+  margin-bottom: 0.5rem;
+`;
 
-//   border-radius: 0.7rem;
-// `;
+export const NowDate = styled.p`
+  font-size: 2rem;
+  color: brown;
+  margin-bottom: 1.5rem;
+`;
