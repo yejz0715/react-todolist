@@ -5,11 +5,12 @@ import {
   RiDeleteBin2Fill, //삭제
   RiDraftFill, //수정
 } from "react-icons/ri";
+
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #fcd8d4;
+  background-color: ${(props) => (props.checked ? "#fcd8d4" : "red")};
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   line-height: 0.6rem;
@@ -32,6 +33,7 @@ export const ItemBox = styled.div`
   flex-direction: column;
   width: 30rem;
   margin: 0 1rem;
+  background-color: transparent;
 `;
 export const ItemInput = styled.input`
   border-bottom: 1px dashed gray;
@@ -39,6 +41,7 @@ export const ItemInput = styled.input`
   padding-top: 0.6rem;
   padding-bottom: 0;
   line-height: 0.8rem;
+  text-decoration: ${(props) => (props.checked ? "line-through" : "none")};
 `;
 export const ItemButtonBox = styled.div`
   display: flex;
@@ -49,6 +52,9 @@ export const Delete = styled(RiDeleteBin2Fill)`
   width: 1.7rem;
   height: 1.7rem;
   margin-right: 0.5rem;
+  &:hover {
+    color: white;
+  }
 `;
 //수정
 export const Update = styled(RiDraftFill)`
@@ -56,10 +62,9 @@ export const Update = styled(RiDraftFill)`
   width: 1.7rem;
   height: 1.7rem;
   margin-right: 0.5rem;
+
   &:hover {
-    ${ItemInput} {
-      border: 1px solid red;
-    }
+    color: white;
   }
 `;
 //저장취소
@@ -74,4 +79,7 @@ export const IconBox = styled.div`
   color: #ffc0cb;
   border-radius: 0.3rem;
   margin-right: 0.5rem;
+  &:hover {
+    background-color: white;
+  }
 `;

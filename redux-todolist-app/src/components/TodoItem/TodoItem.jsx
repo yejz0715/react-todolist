@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-
 import * as S from "./itemStyle";
+import PropsTypes from "prop-types";
 const TodoItem = ({
   list,
   setList,
@@ -12,11 +12,10 @@ const TodoItem = ({
 }) => {
   const [updateText, setUpdateText] = useState(text); //변경된 내용
   const [readOnly, setReadOnly] = useState(true);
-  const [check, setCheck] = useState(isCompleted);
+  const [checked, setCheck] = useState(isCompleted);
   const handleChecked = () => {
     setCheck((prev) => !prev);
   };
-
   const handleDeleteTodo = () => {
     if (readOnly) {
       setList(list.filter((todo) => todo.id !== id));
@@ -33,9 +32,9 @@ const TodoItem = ({
   };
 
   return (
-    <S.ItemContainer>
+    <S.ItemContainer checked={checked}>
       <div onClick={handleChecked}>
-        {check ? <S.Checked /> : <S.UnChecked />}
+        {checked ? <S.Checked /> : <S.UnChecked />}
       </div>
       <br />
       <S.ItemBox>
@@ -44,6 +43,7 @@ const TodoItem = ({
           defaultValue={updateText}
           readOnly={readOnly}
           onChange={handleText}
+          checked={checked}
         />
         <br />
         <div>
@@ -66,5 +66,14 @@ const TodoItem = ({
       </S.ItemButtonBox>
     </S.ItemContainer>
   );
+};
+TodoItem.PropsTypes = {
+  list: PropsTypes.object,
+  setList: PropsTypes.func,
+  id: PropsTypes.number,
+  text: PropsTypes.string,
+  regDate: PropsTypes.string,
+  category: PropsTypes.string,
+  isCompleted: PropsTypes.bool,
 };
 export default TodoItem;
