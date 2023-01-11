@@ -30,7 +30,7 @@ html {
 body{
   width:100%;
   height: 100%;
-  background-color:#efefef;
+  background-color:#F7F6F2;
   color: #333;
   margin: 0;
   font-family: "GangwonEdu_OTFLightA", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -76,11 +76,9 @@ a{
   }
 
   select {
-    border: none;
+    border:none;
     background: none;
-    // -webkit-appearance: none;
-	  // -moz-appearance: none;
-	  // appearance: none;체크박스
+     outline: none;
   }
   
 
