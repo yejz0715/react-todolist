@@ -4,6 +4,8 @@ export const InputBox = styled.div`
   display: flex;
   justify-content: center;
   padding: 1.5rem;
+  background-color: #e8f3d6;
+  border-radius: 0.5rem;
 `;
 export const Input = styled.input`
   width: 100%;
@@ -18,3 +20,6 @@ export const InputButton = styled(MdOutlineAddBox)`
   margin-left: 6px;
   cursor: pointer;
 `;
+export const Select = styled.select``;
+
+export const Option = styled.option``;

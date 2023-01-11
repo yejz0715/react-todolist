@@ -7,6 +7,7 @@ const TodoInput = ({ setCreatedTodo }) => {
   // usRef 값을 받아올 때, nextId.current
   const [text, setText] = useState("");
   const nextId = useRef(4);
+  const [selected, setSelected] = useState("");
 
   // 새로운 투두를 만들어서 저장
   const handleCreateTodo = () => {
@@ -15,15 +16,26 @@ const TodoInput = ({ setCreatedTodo }) => {
       id: nextId.current++,
       text: text,
       regDate: "",
-      category: "",
+      category: selected,
       isCompleted: false,
     });
     // 저장하고 인풋 초기화
     setText("");
   };
 
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
+  };
+
   return (
     <S.InputBox>
+      <S.Select onChange={handleSelect}>
+        <S.Option value="none">선택</S.Option>
+        <S.Option value="일상">일상</S.Option>
+        <S.Option value="공부">공부</S.Option>
+        <S.Option value="취미">취미</S.Option>
+        <S.Option value="기타">기타</S.Option>
+      </S.Select>
       <S.Input
         type="text"
         value={text}

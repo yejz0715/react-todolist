@@ -46,7 +46,15 @@ const TodoItem = ({
           onChange={handleText}
         />
         <br />
-        category: {category} <br />
+        <div>
+          category:{" "}
+          {category === "기타" ? (
+            <input type="text" placeholder="기타" readOnly={readOnly} />
+          ) : (
+            category
+          )}{" "}
+        </div>
+        <br />
       </S.ItemBox>
       <S.ItemButtonBox>
         <div onClick={handleUpdateTodo}>

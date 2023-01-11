@@ -9,7 +9,8 @@ export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: pink;
+  background-color: #fcd8d4;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
   line-height: 0.6rem;
 `;
@@ -29,10 +30,10 @@ export const UnChecked = styled(RiCheckboxBlankLine)`
 export const ItemBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40rem;
+  width: 30rem;
   margin: 0 1rem;
 `;
-export const ItemInput = styled.textarea`
+export const ItemInput = styled.input`
   border-bottom: 1px dashed gray;
   width: 20rem;
   padding-top: 0.6rem;
