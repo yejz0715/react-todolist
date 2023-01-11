@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-
-const TodoCalender = ({ setDate }) => {
-  const [value, onChange] = useState(new Date());
-
+import * as S from "./calenderContainer";
+const TodoCalender = () => {
+  const [date, setDate] = useState(new Date()); //날짜 저장할 상태
   return (
-    <div>
-      <Calendar onChange={onChange} value={value} />
-    </div>
+    <S.TodoCalenderBox>
+      <S.NowDate>{date.toLocaleDateString()}</S.NowDate>
+      <Calendar onChange={setDate} value={date} />
+    </S.TodoCalenderBox>
   );
 };
 export default TodoCalender;
