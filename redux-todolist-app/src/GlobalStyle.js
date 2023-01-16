@@ -9,7 +9,7 @@ html {
   --color-text-secondary: #999999;
   --color-primary: #99C9A6;
   --color-background: #ECECEC;
-  /* font-size: 62.5%;  */
+  font-size: 62.5%; 
 }
 
 
