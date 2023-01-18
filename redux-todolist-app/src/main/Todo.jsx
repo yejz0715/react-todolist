@@ -4,7 +4,6 @@ import TodoInput from "../components/TodoInput/TodoInput";
 import TodoTemplate from "../components/TodoTemplate/TodoTemplate";
 import TodoList from "../components/TodoList/TodoList";
 import { todos } from "../data/dummy";
-import TodoHeader from "../components/TodoHeader/TodoHeader";
 import TodoCalendar from "../components/TodoCalendar/TodoCalendar";
 
 const Todo = () => {
@@ -12,6 +11,7 @@ const Todo = () => {
   const [createdTodo, setCreatedTodo] = useState({});
   const [list, setList] = useState(todos);
   const [date, setDate] = useState(new Date()); //날짜 저장할 상태
+  const nowDate = date.toLocaleDateString();
   // handleAddTodo()를 실행
   useEffect(() => {
     if (!createdTodo.text) return;
@@ -33,10 +33,9 @@ const Todo = () => {
       </S.TodoBlock>
 
       <TodoTemplate>
-        <S.NowDate>{date.toLocaleDateString()}</S.NowDate>
+        <S.NowDate>{nowDate}</S.NowDate>
         {/*yyyy-MM-dd 형식으로*/}
-        <TodoHeader />
-        <TodoInput setCreatedTodo={setCreatedTodo} />
+        <TodoInput setCreatedTodo={setCreatedTodo} nowDate={nowDate} />
         <TodoList setList={setList} list={list} />
       </TodoTemplate>
     </S.TodoContainer>
