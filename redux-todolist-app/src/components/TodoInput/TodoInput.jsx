@@ -3,7 +3,7 @@ import { useRef } from "react";
 import * as S from "./inputStyle";
 import PropsTypes from "prop-types";
 import RadioBox from "../TodoRadioBox/RadioBox";
-import EtcRadioButton from "../TodoRadioBox/EtcRadioButton";
+import EtcRadioBox from "../TodoRadioBox/EtcRadioBox";
 
 const TodoInput = ({ setCreatedTodo, nowDate }) => {
   // useRef를 사용해서 nextId값을 설정
@@ -50,7 +50,7 @@ const TodoInput = ({ setCreatedTodo, nowDate }) => {
   return (
     <S.InputContainer>
       <S.RadioBox>
-        <S.RadioLabel>카테고리</S.RadioLabel>
+        <S.RadioLabel>카테고리:</S.RadioLabel>
         <RadioBox
           name="category"
           value="all"
@@ -79,7 +79,7 @@ const TodoInput = ({ setCreatedTodo, nowDate }) => {
           defaultChecked={checked === "hobby"}
           onChange={handleChecked}
         />
-        <EtcRadioButton
+        <EtcRadioBox
           name="category"
           value="etc"
           text="기타"
