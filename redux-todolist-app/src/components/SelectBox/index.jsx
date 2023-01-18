@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropsTypes from "prop-types";
 import * as S from "./style";
 const SelectBox = ({ list }) => {
   const [isShow, setShow] = useState(false); //리스트가 보이는지
@@ -26,5 +27,8 @@ const SelectBox = ({ list }) => {
       </S.OptionList>
     </S.SelectContainer>
   );
+};
+SelectBox.PropsTypes = {
+  list: PropsTypes.object,
 };
 export default SelectBox;

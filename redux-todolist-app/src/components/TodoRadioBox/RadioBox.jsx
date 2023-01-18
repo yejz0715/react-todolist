@@ -1,4 +1,5 @@
 import React from "react";
+import PropsTypes from "prop-types";
 import * as S from "./style";
 
 const RadioBox = ({ value, text, name, onChange, defaultChecked }) => {
@@ -16,4 +17,13 @@ const RadioBox = ({ value, text, name, onChange, defaultChecked }) => {
     </S.RadioLabel>
   );
 };
+
+RadioBox.PropsTypes = {
+  value: PropsTypes.string,
+  text: PropsTypes.string,
+  name: PropsTypes.string,
+  onChange: PropsTypes.bool,
+  defaultChecked: PropsTypes.func,
+};
+
 export default RadioBox;

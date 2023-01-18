@@ -47,6 +47,7 @@ const TodoInput = ({ setCreatedTodo, nowDate }) => {
     // 저장하고 인풋 초기화
     setText("");
   };
+
   return (
     <S.InputContainer>
       <S.RadioBox>
@@ -104,6 +105,7 @@ const TodoInput = ({ setCreatedTodo, nowDate }) => {
 
 TodoInput.PropsTypes = {
   setCreatedTodo: PropsTypes.func,
+  nowDate: PropsTypes.string,
 };
 
 export default TodoInput;

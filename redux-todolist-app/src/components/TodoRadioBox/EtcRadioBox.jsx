@@ -1,4 +1,5 @@
 import React from "react";
+import PropsTypes from "prop-types";
 import styled from "styled-components";
 import RadioBox from "./RadioBox";
 
@@ -39,5 +40,13 @@ export const EtcContainer = styled.div`
     }
   }
 `;
-
+RadioBox.PropsTypes = {
+  value: PropsTypes.string,
+  text: PropsTypes.string,
+  name: PropsTypes.string,
+  onChange: PropsTypes.bool,
+  defaultChecked: PropsTypes.func,
+  handleEtcValue: PropsTypes.func,
+  etcValue: PropsTypes.string,
+};
 export default EtcRadioBox;
