@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import * as S from "./inputStyle";
-import PropsTypes from "prop-types";
 import RadioBox from "../TodoRadioBox/RadioBox";
 import EtcRadioBox from "../TodoRadioBox/EtcRadioBox";
 
@@ -100,10 +99,6 @@ const TodoInput = ({ setCreatedTodo, nowDate }) => {
       </S.InputBox>
     </S.InputContainer>
   );
-};
-
-TodoInput.PropsTypes = {
-  setCreatedTodo: PropsTypes.func,
 };
 
 export default TodoInput;

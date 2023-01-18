@@ -1,7 +1,6 @@
 import React from "react";
 import TodoItem from "../TodoItem/TodoItem";
 import * as S from "./listStyle";
-import PropsTypes from "prop-types";
 import SelectBox from "../SelectBox";
 
 const TodoList = ({ setList, list }) => {
@@ -38,9 +37,5 @@ const TodoList = ({ setList, list }) => {
         ))}
     </S.ListBox>
   );
-};
-TodoList.PropsTypes = {
-  setList: PropsTypes.func,
-  list: PropsTypes.object,
 };
 export default TodoList;

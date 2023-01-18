@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import * as S from "./itemStyle";
-import PropsTypes from "prop-types";
 const TodoItem = ({
   list,
   setList,
@@ -67,13 +66,5 @@ const TodoItem = ({
     </S.ItemContainer>
   );
 };
-TodoItem.PropsTypes = {
-  list: PropsTypes.object,
-  setList: PropsTypes.func,
-  id: PropsTypes.number,
-  text: PropsTypes.string,
-  regDate: PropsTypes.string,
-  category: PropsTypes.string,
-  isCompleted: PropsTypes.bool,
-};
+
 export default TodoItem;
