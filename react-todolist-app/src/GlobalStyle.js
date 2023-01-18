@@ -9,20 +9,7 @@ html {
   --color-text-secondary: #999999;
   --color-primary: #99C9A6;
   --color-background: #ECECEC;
-  //font-size: 62.5%; 
-}
-
-@font-face {
-     font-family: 'S-CoreDream-4Regular';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
-}
-@font-face {
-     font-family: 'S-CoreDream-6Bold';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
+  font-size: 62.5%; 
 }
 
 
@@ -43,7 +30,7 @@ html {
 body{
   width:100%;
   height: 100%;
-  background-color:#efefef;
+  background-color:#F7F6F2;
   color: #333;
   margin: 0;
   font-family: "GangwonEdu_OTFLightA", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -83,17 +70,13 @@ a{
   button {
      outline: none;
     border: none;
-   /* background: none;
-    padding: 0; */
     cursor: pointer;
   }
 
   select {
-    border: none;
+    border:none;
     background: none;
-    // -webkit-appearance: none;
-	  // -moz-appearance: none;
-	  // appearance: none;체크박스
+     outline: none;
   }
   
 

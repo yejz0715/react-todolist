@@ -1,13 +1,13 @@
-import React from "react";
-import AppRouter from "./AppRouter";
+import "./App.css";
 import { GlobalStyle } from "./GlobalStyle";
+import Todo from "./main/Todo";
 
 function App() {
   return (
-    <>
+    <div>
       <GlobalStyle />
-      <AppRouter />;
-    </>
+      <Todo />
+    </div>
   );
 }
 
