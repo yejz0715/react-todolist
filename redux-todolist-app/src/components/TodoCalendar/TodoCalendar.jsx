@@ -1,6 +1,6 @@
 import React from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import "./Calendar.css";
 import * as S from "./calendarContainer";
 import PropsTypes from "prop-types";
 const TodoCalendar = ({ setDate, date }) => {
