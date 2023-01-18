@@ -12,6 +12,7 @@ const Todo = () => {
   const [list, setList] = useState(todos);
   const [date, setDate] = useState(new Date()); //날짜 저장할 상태
   const nowDate = date.toLocaleDateString();
+
   // handleAddTodo()를 실행
   useEffect(() => {
     if (!createdTodo.text) return;
@@ -34,7 +35,7 @@ const Todo = () => {
 
       <TodoTemplate>
         <S.NowDate>{nowDate}</S.NowDate>
-        {/*yyyy-MM-dd 형식으로*/}
+
         <TodoInput setCreatedTodo={setCreatedTodo} nowDate={nowDate} />
         <TodoList setList={setList} list={list} />
       </TodoTemplate>
