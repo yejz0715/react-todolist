@@ -1,31 +1,30 @@
 import styled from "styled-components";
 export const SelectContainer = styled.div`
-  // display: block;
-  display: flex;
-  flex-direction: column;
+  display: block;
   position: relative;
-  background-color: pink;
+  background-color: #fefbf3;
   width: 8rem;
-  font-size: 2rem;
-  margin: 0 1rem;
+  font-size: 1.8rem;
+  margin-left: 1rem;
   cursor: pointer;
   height: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  box-shadow: 0 0.3px 2px rgba(0, 0, 0, 0.2);
 `;
 export const SelectLabel = styled.label`
-  padding: 1rem 0 0 0.7rem;
+  font-size: 1.8rem;
 `;
 export const OptionList = styled.ul`
-  display: inline;
+  width: 100%;
   position: absolute;
   overflow: hidden;
-  width: 100%;
   max-height: ${(props) => (props.isShow ? "none" : "0")};
-  background-color: pink;
+  background-color: white;
   cursor: pointer;
 `;
 export const Option = styled.li`
-  text-align: 10rem;
-  border-bottom: 0.5rem solid beige;
-  padding: 1rem 0 0 0.7rem;
-  margin: 0 auto;
+  border-bottom: 1px solid black;
+  padding-top: 0.7rem;
 `;

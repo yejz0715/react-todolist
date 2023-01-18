@@ -10,7 +10,7 @@ const SelectBox = ({ list }) => {
 
   const handleOption = (e) => {
     //옵션 선택시
-    setCurrentValue(e.target.textContent);
+    setCurrentValue(e.target.innerText);
     setShow((prev) => !prev);
   };
 
