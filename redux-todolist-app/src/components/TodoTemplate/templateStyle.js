@@ -1,8 +1,7 @@
 import styled from "styled-components";
 export const TemplateBlock = styled.div`
-  height: 100%;
-  border-radius: 0.5rem;
-  background-color: #fffbe9;
-  margin: 1rem;
-  margin-right: 2rem;
+  background-color: white;
+  margin: 1.5rem;
+  margin-top: 5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 `;
