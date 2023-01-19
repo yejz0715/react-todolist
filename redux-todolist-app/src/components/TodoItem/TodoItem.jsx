@@ -1,40 +1,42 @@
 import { React, useState } from "react";
 import * as S from "./itemStyle";
 import PropsTypes from "prop-types";
-const TodoItem = ({
-  list,
-  setList,
-  id,
-  text,
-  regDate,
-  category,
-  isCompleted,
-}) => {
+import { useDispatch } from "react-redux";
+import { deleteTodo, updateTodo, toggleTodo } from "../../modules/todo";
+const TodoItem = ({ id, text, regDate, category, isCompleted }) => {
   const [updateText, setUpdateText] = useState(text); //변경된 내용
   const [readOnly, setReadOnly] = useState(true);
-  const [checked, setCheck] = useState(isCompleted);
+  const dispatch = useDispatch();
+
   const handleChecked = () => {
-    setCheck((prev) => !prev);
-  };
-  const handleDeleteTodo = () => {
-    if (readOnly) {
-      setList(list.filter((todo) => todo.id !== id));
-    } else {
-      setReadOnly((prev) => !prev);
-    }
-  };
-  const handleUpdateTodo = () => {
-    setReadOnly((prev) => !prev);
+    dispatch(toggleTodo(id));
   };
 
   const handleText = (e) => {
     setUpdateText(e.target.value);
   };
 
+  //삭제
+  const handleDeleteTodo = () => {
+    if (readOnly) {
+      dispatch(deleteTodo(id));
+    } else {
+      setReadOnly((prev) => !prev);
+    }
+  };
+
+  //수정
+  const handleUpdateTodo = () => {
+    if (!readOnly) {
+      dispatch(updateTodo(id, updateText));
+    }
+    setReadOnly((prev) => !prev);
+  };
+
   return (
-    <S.ItemContainer checked={checked}>
+    <S.ItemContainer checked={isCompleted}>
       <div onClick={handleChecked}>
-        {checked ? <S.Checked /> : <S.UnChecked />}
+        {isCompleted ? <S.Checked /> : <S.UnChecked />}
       </div>
       <br />
       <S.ItemBox>
@@ -43,7 +45,7 @@ const TodoItem = ({
           defaultValue={updateText}
           readOnly={readOnly}
           onChange={handleText}
-          checked={checked}
+          checked={isCompleted}
         />
         <br />
         <div>
@@ -68,8 +70,6 @@ const TodoItem = ({
   );
 };
 TodoItem.PropsTypes = {
-  list: PropsTypes.object,
-  setList: PropsTypes.func,
   id: PropsTypes.number,
   text: PropsTypes.string,
   regDate: PropsTypes.string,

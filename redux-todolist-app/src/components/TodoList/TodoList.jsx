@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TodoItem from "../TodoItem/TodoItem";
 import * as S from "./listStyle";
 import PropsTypes from "prop-types";
 import SelectBox from "../SelectBox";
+import { useSelector } from "react-redux";
 
-const TodoList = ({ setList, list }) => {
+const TodoList = () => {
+  const list = useSelector((state) => state.todoReducer.todos);
   const todoList = [
     { id: 1, value: "all", text: "할일" },
     { id: 2, value: "completed", text: "완료" },
@@ -17,6 +19,9 @@ const TodoList = ({ setList, list }) => {
     { id: 4, value: "hobby", text: "취미" },
     { id: 5, value: "etc", text: "기타" },
   ];
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
   return (
     <S.ListBox>
       <S.SelectContainer>
@@ -32,8 +37,6 @@ const TodoList = ({ setList, list }) => {
             regDate={item.regDate}
             category={item.category}
             isCompleted={item.isCompleted}
-            list={list}
-            setList={setList}
           />
         ))}
     </S.ListBox>
