@@ -5,6 +5,7 @@ export const InputContainer = styled.div`
   background-color: #f9f9f9;
   padding: 2rem;
   border-radius: 0.5rem;
+  margin-bottom: 3rem;
 `;
 export const RadioBox = styled.div`
   margin-bottom: 2rem;

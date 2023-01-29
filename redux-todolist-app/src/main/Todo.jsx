@@ -10,6 +10,7 @@ const Todo = () => {
   const todos = useSelector((state) => state.todoReducer.todos);
   // 새로 만든 투두의 정보를 담을 객체
   const [date, setDate] = useState(new Date()); //날짜 저장할 상태
+  const today = new Date().toLocaleDateString();
   const nowDate = date.toLocaleDateString();
 
   return (
@@ -20,10 +21,10 @@ const Todo = () => {
       </S.TodoBlock>
 
       <TodoTemplate>
-        <S.NowDate>{nowDate}</S.NowDate>
+        <S.NowDate>{today}</S.NowDate>
 
         <TodoInput nowDate={nowDate} />
-        <TodoList />
+        <TodoList nowDate={nowDate} />
       </TodoTemplate>
     </S.TodoContainer>
   );
