@@ -6,7 +6,7 @@ import EtcRadioBox from "../TodoRadioBox/EtcRadioBox";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../modules/todo";
 
-const TodoInput = ({ nowDate }) => {
+const TodoInput = ({ selectedDate }) => {
   const dispatch = useDispatch();
 
   const [text, setText] = useState("");
@@ -29,27 +29,31 @@ const TodoInput = ({ nowDate }) => {
   const handleCreateTodo = () => {
     const todo = {
       text: text,
-      regDate: nowDate,
+      regDate: selectedDate,
       category: categoryChecked,
     };
     const todoEtc = {
       text: text,
-      regDate: nowDate,
+      regDate: selectedDate,
       category: categoryChecked + "_" + etcValue,
     };
-    console.log(categoryChecked);
+
     if (text !== "" && categoryChecked !== "") {
       if (categoryChecked === "etc") {
         if (etcValue !== "") {
           dispatch(addTodo(todoEtc));
           setEtcValue("");
           setText("");
+        } else {
+          alert("기타항목을 입력해주세요!");
         }
       } else {
         dispatch(addTodo(todo));
         setEtcValue("");
         setText("");
       }
+    } else {
+      alert("할일과 카테고리가 입력되었는지 확인해주세요! ");
     }
   };
 
@@ -61,28 +65,28 @@ const TodoInput = ({ nowDate }) => {
         <RadioBox
           name="category"
           value="daily"
-          text="일상"
+          text="daily"
           defaultChecked={categoryChecked === "daily"}
           onChange={handleChecked}
         />
         <RadioBox
           name="category"
           value="study"
-          text="공부"
+          text="study"
           defaultChecked={categoryChecked === "study"}
           onChange={handleChecked}
         />
         <RadioBox
           name="category"
           value="hobby"
-          text="취미"
+          text="hobby"
           defaultChecked={categoryChecked === "hobby"}
           onChange={handleChecked}
         />
         <EtcRadioBox
           name="category"
           value="etc"
-          text="기타"
+          text="etc"
           defaultChecked={categoryChecked === "etc"}
           onChange={handleChecked}
           handleEtcValue={handleEtcValue}
@@ -103,7 +107,7 @@ const TodoInput = ({ nowDate }) => {
 };
 
 TodoInput.PropsTypes = {
-  nowDate: PropsTypes.string,
+  selectedDate: PropsTypes.string,
 };
 
 export default TodoInput;
