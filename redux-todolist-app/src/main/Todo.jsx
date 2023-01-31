@@ -4,14 +4,13 @@ import TodoInput from "../components/TodoInput/TodoInput";
 import TodoTemplate from "../components/TodoTemplate/TodoTemplate";
 import TodoList from "../components/TodoList/TodoList";
 import TodoCalendar from "../components/TodoCalendar/TodoCalendar";
-import { useSelector } from "react-redux";
 
 const Todo = () => {
-  const todos = useSelector((state) => state.todoReducer.todos);
   // 새로 만든 투두의 정보를 담을 객체
-  const [date, setDate] = useState(new Date()); //날짜 저장할 상태
-  const today = new Date().toLocaleDateString();
-  const nowDate = date.toLocaleDateString();
+  // const todos = useSelector((state) => state.todoReducer.todos);
+  const [date, setDate] = useState(new Date()); //선택한 날짜 저장할 상태
+  const today = new Date().toLocaleDateString(); //오늘 날짜
+  const selectedDate = date.toLocaleDateString();
 
   return (
     <S.TodoContainer>
@@ -23,8 +22,8 @@ const Todo = () => {
       <TodoTemplate>
         <S.NowDate>{today}</S.NowDate>
 
-        <TodoInput nowDate={nowDate} />
-        <TodoList nowDate={nowDate} />
+        <TodoInput selectedDate={selectedDate} />
+        <TodoList selectedDate={selectedDate} />
       </TodoTemplate>
     </S.TodoContainer>
   );
