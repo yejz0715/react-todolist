@@ -3,13 +3,21 @@ const ADD_TODO = "ADD_TODO";
 const UPDATE_TODO = "UPDATE_TODO";
 const DELETE_TODO = "DELETE_TODO";
 const TOGGLE_TODO = "TOGGLE_TODO";
+const SELECT_TODO = "SELECT_TODO";
+const SELECT_CATEGORY = "SELECT_CATEGORY";
+const SELECT_DATE = "SELECT_DATE";
+const GET_TODOS = "GET_TODOS";
 
 //default state(initState)=todos, 초기상태
 const initState = {
-  todos: [],
+  todos: [], // 원본 투두
+  tmp: [], // 조건부로 갈라진 투두
+  categoryState: "all",
+  todoState: "all",
+  currentDate: new Date().toLocaleDateString(),
 };
-
 let nextId = 0;
+
 //액션생성함수
 export const addTodo = (todo) => {
   return {
@@ -45,6 +53,34 @@ export const toggleTodo = (id) => {
   return {
     type: TOGGLE_TODO,
     payload: { id: id },
+  };
+};
+export const selectTodo = (todoState) => {
+  return {
+    type: SELECT_TODO,
+    payload: { todoState: todoState },
+  };
+};
+
+export const selectCategory = (categoryState) => {
+  return {
+    type: SELECT_CATEGORY,
+    payload: {
+      categoryState: categoryState,
+    },
+  };
+};
+export const selectDate = (currentDate) => {
+  return {
+    type: SELECT_DATE,
+    payload: {
+      currentDate: currentDate,
+    },
+  };
+};
+export const getTodos = () => {
+  return {
+    type: GET_TODOS,
   };
 };
 
@@ -83,6 +119,32 @@ export function todoReducer(state = initState, { type, payload }) {
             : todo
         ),
       };
+    case SELECT_TODO:
+      return {
+        ...state,
+        todoState: payload.todoState,
+      };
+    case SELECT_CATEGORY:
+      return {
+        ...state,
+        categoryState: payload.categoryState,
+      };
+    case SELECT_DATE:
+      return {
+        ...state,
+        currentDate: payload.currentDate,
+      };
+    case GET_TODOS:
+      return {
+        ...state,
+        todos: state.todos.filter(
+          (todo) =>
+            todo.regDate === state.currentDate &&
+            todo.category === state.categoryState &&
+            todo.isCompleted === state.todoState
+        ),
+      };
+
     default:
       return { ...state };
   }
