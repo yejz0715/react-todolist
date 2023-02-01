@@ -47,7 +47,6 @@ const TodoList = ({ selectedDate }) => {
   //
   return (
     <>
-      <S.NowDate>{selectedDate}</S.NowDate>
       <S.ListBox>
         <S.SelectContainer>
           <SelectBox list={todoList} type="todo" />

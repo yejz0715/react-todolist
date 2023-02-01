@@ -11,7 +11,7 @@ export const ItemContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding: 0.5rem 0;
-  background-color: ${(props) => (props.checked ? "#65647C" : "#FFF1F1")};
+  background-color: ${(props) => (props.checked ? "#65647C" : "#FFF2F2")};
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   line-height: 1rem;

@@ -59,8 +59,10 @@ const TodoInput = ({ selectedDate }) => {
 
   return (
     <S.InputContainer>
+      <S.NowDate>{selectedDate}</S.NowDate>
+
       <S.RadioBox>
-        <S.RadioLabel>카테고리:</S.RadioLabel>
+        <S.RadioLabel>카테고리</S.RadioLabel>
 
         <RadioBox
           name="category"
@@ -93,6 +95,7 @@ const TodoInput = ({ selectedDate }) => {
           etcValue={etcValue}
         />
       </S.RadioBox>
+
       <S.InputBox>
         <S.Input
           type="text"

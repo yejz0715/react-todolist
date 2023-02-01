@@ -7,7 +7,7 @@ export const RadioLabel = styled.label`
   width: 7rem;
   height: 2.5rem;
   padding-top: 0.5rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   background-color: ${(props) =>
     props.defaultChecked ? "#ada2ff" : "#FFD4B2"};
   color: ${(props) => (props.defaultChecked ? "#222" : "#222")};
