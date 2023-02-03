@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./inputStyle";
 import PropsTypes from "prop-types";
 import RadioBox from "../TodoRadioBox/RadioBox";
@@ -8,7 +8,6 @@ import { addTodo } from "../../modules/todo";
 
 const TodoInput = ({ nowDate }) => {
   const dispatch = useDispatch();
-
   const [text, setText] = useState("");
   const [categoryChecked, setCategoryChecked] = useState("");
   const [etcValue, setEtcValue] = useState("");

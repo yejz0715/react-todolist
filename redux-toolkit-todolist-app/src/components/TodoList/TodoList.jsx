@@ -6,7 +6,7 @@ import SelectBox from "../SelectBox";
 import { useSelector } from "react-redux";
 
 const TodoList = () => {
-  const list = useSelector((state) => state.todoReducer.todos);
+  const list = useSelector((state) => state.rootReducer.reducer.todos);
   const todoList = [
     { id: 1, value: "all", text: "할일" },
     { id: 2, value: "completed", text: "완료" },
@@ -28,6 +28,7 @@ const TodoList = () => {
         <SelectBox list={todoList} />
         <SelectBox list={categoryList} />
       </S.SelectContainer>
+
       {list &&
         list.map((item) => (
           <TodoItem
