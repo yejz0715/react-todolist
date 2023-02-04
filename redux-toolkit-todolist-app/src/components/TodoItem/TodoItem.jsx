@@ -28,7 +28,7 @@ const TodoItem = ({ id, text, regDate, category, isCompleted }) => {
   //수정
   const handleUpdateTodo = () => {
     if (!readOnly) {
-      dispatch(updateTodo(id, updateText));
+      dispatch(updateTodo({ id, updateText }));
     }
     setReadOnly((prev) => !prev);
   };

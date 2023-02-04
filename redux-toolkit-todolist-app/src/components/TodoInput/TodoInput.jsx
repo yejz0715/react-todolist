@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as S from "./inputStyle";
 import PropsTypes from "prop-types";
 import RadioBox from "../TodoRadioBox/RadioBox";
@@ -7,10 +7,11 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../../modules/todo";
 
 const TodoInput = ({ nowDate }) => {
-  const dispatch = useDispatch();
   const [text, setText] = useState("");
   const [categoryChecked, setCategoryChecked] = useState("");
   const [etcValue, setEtcValue] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleText = (e) => {
     setText(e.target.value);
@@ -37,18 +38,23 @@ const TodoInput = ({ nowDate }) => {
       category: categoryChecked + "_" + etcValue,
     };
     console.log(categoryChecked);
+
     if (text !== "" && categoryChecked !== "") {
       if (categoryChecked === "etc") {
         if (etcValue !== "") {
           dispatch(addTodo(todoEtc));
           setEtcValue("");
           setText("");
+        } else {
+          alert("기타항목을 입력해주세요!");
         }
       } else {
         dispatch(addTodo(todo));
         setEtcValue("");
         setText("");
       }
+    } else {
+      alert("할일과 카테고리가 입력되었는지 확인해주세요! ");
     }
   };
 
