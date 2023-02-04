@@ -28,9 +28,11 @@ html {
 
 
 body{
-  width:100%;
-  height: 100%;
-  background-color:#F7F6F2;
+  display: flex;
+ // justify-content: center;
+  width: 100%;
+  margin-top: 13rem;
+  background-color:#f9f9f9;
   color: #333;
   margin: 0;
   font-family: "GangwonEdu_OTFLightA", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -41,6 +43,14 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
+
+  @media screen and (min-width: 991px) {
+  
+    display: flex;
+    justify-content: center;
+  
+}
+
 
 }
 a{
