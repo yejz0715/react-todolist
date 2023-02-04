@@ -2,14 +2,20 @@ import styled from "styled-components";
 import { MdOutlineAddBox } from "react-icons/md";
 
 export const InputContainer = styled.div`
-  background-color: #f9f9f9;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 0.5rem;
+  margin-bottom: 3rem;
 `;
+export const NowDate = styled.p`
+  font-size: 2rem;
+  padding: 1rem 1rem;
+  padding-top: 0;
+`;
+
 export const RadioBox = styled.div`
   margin-bottom: 2rem;
   display: flex;
-  justify-content: center;
 `;
 export const RadioLabel = styled.label`
   width: 8rem;
