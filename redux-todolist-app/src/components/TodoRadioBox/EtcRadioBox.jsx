@@ -28,7 +28,8 @@ const EtcRadioBox = ({
   );
 };
 export const RadioInput = styled.input`
-  width: 5rem;
+  max-width: 5rem;
+
   border-bottom: 1px solid gray;
   cursor: pointer;
 `;

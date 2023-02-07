@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
 export const TodoCalendarBox = styled.div`
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
 `;

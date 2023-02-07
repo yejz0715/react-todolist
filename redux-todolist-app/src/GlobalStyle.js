@@ -28,10 +28,10 @@ html {
 
 
 body{
-  display: flex;
- // justify-content: center;
-  width: 100%;
-  margin-top: 13rem;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
   background-color:#f9f9f9;
   color: #333;
   margin: 0;
@@ -43,15 +43,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
-
-  @media screen and (min-width: 991px) {
-  
-    display: flex;
-    justify-content: center;
-  
-}
-
-
+ 
 }
 a{
       text-decoration: none;

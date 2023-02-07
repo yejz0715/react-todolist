@@ -4,10 +4,24 @@ import * as S from "./listStyle";
 import PropsTypes from "prop-types";
 import SelectBox from "../SelectBox";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDate } from "../../modules/todo";
+import { getTodos, selectDate } from "../../modules/todo";
 
 const TodoList = ({ selectedDate }) => {
+  const todoList = [
+    { id: 1, value: "all", text: "all" },
+    { id: 2, value: "completed", text: "completed" },
+    { id: 3, value: "inComplete", text: "inComplete" },
+  ];
+  const categoryList = [
+    { id: 1, value: "all", text: "all" },
+    { id: 2, value: "daily", text: "daily" },
+    { id: 3, value: "study", text: "study" },
+    { id: 4, value: "hobby", text: "hobby" },
+    { id: 5, value: "etc", text: "etc" },
+  ];
+  getTodos(); //
   const dispatch = useDispatch();
+  const list = useSelector((state) => state.todoReducer.todos);
 
   // 확인해야 할 것
   // 투두 상태, 카테고리, 선택한 날짜
@@ -27,23 +41,11 @@ const TodoList = ({ selectedDate }) => {
     // console.log("여기", day);
   }, [selectedDate]);
 
-  const list = useSelector((state) => state.todoReducer.todos);
+  //useEffect todolist 바뀔때마다 temp에 찍힌느
 
   // const dateList = list.filter((item) => item.regDate === selectedDate); //날짜기준_리스트
   // const [currentValue, setCurrentValue] = useState(list[0].text); //현재 선택한 옵션
 
-  const todoList = [
-    { id: 1, value: "all", text: "all" },
-    { id: 2, value: "completed", text: "completed" },
-    { id: 3, value: "inComplete", text: "inComplete" },
-  ];
-  const categoryList = [
-    { id: 1, value: "all", text: "all" },
-    { id: 2, value: "daily", text: "daily" },
-    { id: 3, value: "study", text: "study" },
-    { id: 4, value: "hobby", text: "hobby" },
-    { id: 5, value: "etc", text: "etc" },
-  ];
   //
   return (
     <>
@@ -52,8 +54,7 @@ const TodoList = ({ selectedDate }) => {
           <SelectBox list={todoList} type="todo" />
           <SelectBox list={categoryList} type="cate" />
         </S.SelectContainer>
-        {/* all-all todos 
-            (다른 조건-reducer)나머지 tmp */}
+
         {list &&
           list.map((item) => (
             <TodoItem
