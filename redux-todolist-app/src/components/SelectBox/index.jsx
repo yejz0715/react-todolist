@@ -8,9 +8,7 @@ const SelectBox = ({ list, state, type }) => {
   const [isShow, setShow] = useState(false); //리스트가 보이는지
   // const [currentValue, setCurrentValue] = useState(list[0].text); //현재 선택한 옵션
   const currentValue = useSelector((state) =>
-    type === "todo"
-      ? state.todoReducer.todoState
-      : state.todoReducer.categoryState
+    type === "todo" ? state.todo.todoState : state.todo.categoryState
   );
 
   const dispatch = useDispatch();
@@ -22,10 +20,10 @@ const SelectBox = ({ list, state, type }) => {
   const handleOption = (e) => {
     if (type === "todo") {
       dispatch(selectTodo(e.target.innerText));
-      console.log(e.target.innerText);
+      //  console.log(e.target.innerText);
     } else {
       dispatch(selectCategory(e.target.innerText));
-      console.log(e.target.innerText);
+      //  console.log(e.target.innerText);
     }
 
     setShow((prev) => !prev);

@@ -6,7 +6,7 @@ const TOGGLE_TODO = "TOGGLE_TODO";
 const SELECT_TODO = "SELECT_TODO";
 const SELECT_CATEGORY = "SELECT_CATEGORY";
 const SELECT_DATE = "SELECT_DATE";
-const GET_TODOS = "GET_TODOS";
+//const GET_TODOS = "GET_TODOS";
 
 //default state(initState)=todos, 초기상태
 const initState = {
@@ -16,14 +16,13 @@ const initState = {
   todoState: "all",
   currentDate: new Date().toLocaleDateString(),
 };
-let nextId = 0;
 
 //액션생성함수
 export const addTodo = (todo) => {
   return {
     type: ADD_TODO,
     payload: {
-      id: nextId++,
+      id: Date.now(),
       text: todo.text,
       regDate: todo.regDate,
       category: todo.category,
@@ -78,11 +77,11 @@ export const selectDate = (currentDate) => {
     },
   };
 };
-export const getTodos = () => {
-  return {
-    type: GET_TODOS,
-  };
-};
+// export const getTodos = () => {
+//   return {
+//     type: GET_TODOS,
+//   };
+// };
 
 //todoReducer (상태,액션함수)
 export function todoReducer(state = initState, { type, payload }) {
@@ -134,18 +133,28 @@ export function todoReducer(state = initState, { type, payload }) {
         ...state,
         currentDate: payload.currentDate,
       };
-    case GET_TODOS:
-      return {
-        ...state,
-        todos: state.todos.filter(
-          (todo) =>
-            todo.regDate === state.currentDate &&
-            todo.category === state.categoryState &&
-            todo.isCompleted === state.todoState
-        ),
-      };
-
     default:
-      return { ...state };
+      return state;
   }
 }
+
+// case GET_TODOS:
+//   return {
+//     // ...state, 달력
+//     todos: state.todos.filter(
+//       (todo) => todo.isCompleted && todo.category === "all"
+//     ),
+//   };
+
+// tmp: state.todos.filter(
+//   (todo) => {
+//     if (todo.isCompleted && todo.category === "all") {
+//     } else if (todo) {
+//     } else if (todo) {
+//     } else {
+//     }
+// }
+// todo.regDate === state.currentDate &&
+//   todo.category === state.categoryState
+// &&
+// todo.isCompleted === state.todoState
