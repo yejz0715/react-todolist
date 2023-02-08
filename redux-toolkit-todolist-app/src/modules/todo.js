@@ -1,16 +1,16 @@
 import { combineReducers, createSlice } from "@reduxjs/toolkit";
-
+import storage from "redux-persist/lib/storage/session"; //세션스토리에 저장
+import persistReducer from "redux-persist/es/persistReducer";
 const initState = {
   todos: [],
 };
-let nextNum = 0;
 const todoSlice = createSlice({
   name: "todoReducer",
   initialState: initState,
   reducers: {
     addTodo: (state, { payload }) => {
       state.todos.push({
-        id: nextNum++,
+        id: Date.now(),
         text: payload.text,
         regDate: payload.regDate,
         category: payload.category,
@@ -35,5 +35,19 @@ const todoSlice = createSlice({
 
 export const { addTodo, updateTodo, deleteTodo, toggleTodo } =
   todoSlice.actions;
-let rootReducer = combineReducers({ reducer: todoSlice.reducer });
-export default rootReducer;
+
+//persistConfig
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["reducer"],
+};
+
+let rootReducer = combineReducers({
+  reducer: todoSlice.reducer,
+});
+
+//persistReducer
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export default persistedReducer;
