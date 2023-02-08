@@ -30,7 +30,9 @@ html {
 body{
   width:100%;
   height: 100%;
-  background-color:#F7F6F2;
+  display:flex;
+  justify-content:center;
+  background-color:#f9f9f9;
   color: #333;
   margin: 0;
   font-family: "GangwonEdu_OTFLightA", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

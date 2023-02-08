@@ -1,21 +1,22 @@
 import styled from "styled-components";
 export const TodoContainer = styled.div`
-  margin-top: 3rem;
-  width: 100%;
   display: flex;
-  background-color: #f9f9f9;
+  width: 100%;
   padding: 1.7rem;
   border-radius: 1rem;
-
+  background-color: #f9f9f9;
   @media (max-width: 991px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width: 100vw;
   }
 `;
 
 export const TodoBlock = styled.div`
+  width: 100%;
   padding-right: 2.5rem;
+
   @media screen and (max-width: 991px) {
     padding: 0;
   }
@@ -34,6 +35,7 @@ export const NowDate = styled.p`
   color: brown;
   margin: 1.5rem;
   padding: 0.5rem;
+
   @media screen and (max-width: 991px) {
     display: none;
   }

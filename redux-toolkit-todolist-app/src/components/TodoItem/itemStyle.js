@@ -10,11 +10,13 @@ export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0.5rem 0;
-  background-color: ${(props) => (props.checked ? "#65647C" : "#FFF1F1")};
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
   line-height: 1rem;
+  background-color: ${(props) => (props.checked ? "#65647C" : "#FFF2F2")};
+  border-radius: 0.5rem;
 `;
 //체크
 export const Checked = styled(RiCheckboxFill)`
@@ -32,15 +34,16 @@ export const UnChecked = styled(RiCheckboxBlankLine)`
 export const ItemBox = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding-top: 1rem;
   background-color: transparent;
   font-size: 1.9rem;
 `;
 export const ItemInput = styled.input`
-  border-bottom: 1px dashed gray;
-  width: 27rem;
+  width: 100%;
   padding-top: 0.6rem;
   padding-bottom: 0;
+  border-bottom: 1px dashed gray;
   text-decoration: ${(props) => (props.checked ? "line-through" : "none")};
   font-size: 1.6rem;
 `;
@@ -49,20 +52,20 @@ export const ItemButtonBox = styled.div`
 `;
 //삭제
 export const Delete = styled(RiDeleteBin2Fill)`
-  cursor: pointer;
   width: 3.3rem;
   height: 3.3rem;
   margin-right: 0.5rem;
+  cursor: pointer;
   &:hover {
     color: #f190b7;
   }
 `;
 //수정
 export const Update = styled(RiDraftFill)`
-  cursor: pointer;
   width: 3.3rem;
   height: 3.3rem;
   margin-right: 0.5rem;
+  cursor: pointer;
 
   &:hover {
     color: #f190b7;
@@ -70,16 +73,16 @@ export const Update = styled(RiDraftFill)`
 `;
 //저장취소
 export const IconBox = styled.div`
-  cursor: pointer;
-  padding: 0 0.15rem;
   width: 3rem;
   height: 3rem;
-  font-size: 1.6rem;
+  padding: 0 0.15rem;
   line-height: 3.3rem;
+  margin-right: 0.5rem;
   background-color: #333333;
   color: #ffc0cb;
+  font-size: 1.6rem;
   border-radius: 0.3rem;
-  margin-right: 0.5rem;
+  cursor: pointer;
   &:hover {
     background-color: white;
   }
